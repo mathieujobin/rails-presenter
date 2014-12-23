@@ -1,6 +1,8 @@
 RailsPresenter::Base
 ===============================================
 
+[![Build Status](https://travis-ci.org/somekool/rails-presenter.svg)](https://travis-ci.org/somekool/rails-presenter)
+
 it should ease the pain of creating a presenter that requires to access Rails helper methods
 
 * it should be able to call rails render method for partials
