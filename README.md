@@ -1,4 +1,4 @@
-This will become the home of my Rails Presenter
+RailsPresenter::Base
 ===============================================
 
 it should ease the pain of creating a presenter that requires to access Rails helper methods
