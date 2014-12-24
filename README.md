@@ -2,6 +2,7 @@ RailsPresenter::Base
 ===============================================
 
 [![Build Status](https://travis-ci.org/somekool/rails-presenter.svg)](https://travis-ci.org/somekool/rails-presenter)
+[![Gem Version](https://badge.fury.io/rb/rails-presenter.svg)](http://badge.fury.io/rb/rails-presenter)
 
 it should ease the pain of creating a presenter that requires to access Rails helper methods
 
