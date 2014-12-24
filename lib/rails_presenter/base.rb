@@ -8,4 +8,8 @@ class RailsPresenter::Base
     self.assets_environment = Rails.application.assets if Rails.application.config.assets.compile
     self.assets_manifest = Rails.application.assets_manifest
   end
+
+  def t(*args)
+    I18n.t(*args)
+  end
 end

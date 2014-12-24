@@ -59,6 +59,12 @@ RSpec.describe TestController, :type => :controller do
           expect(response.body).to match '<img alt="Image" src="/assets/image.png" />'
         end
       end
+      context 'when using I18n.t()' do
+        it 'should work without specifying the module explicitely' do
+          get :index
+          expect(response.body).to match 'translation missing'
+        end
+      end
     end
   end
 end

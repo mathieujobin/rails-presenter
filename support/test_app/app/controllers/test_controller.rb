@@ -25,6 +25,9 @@ class FooBarPresenter < RailsPresenter::Base
     content_tag(:article, 'foo'.html_safe, class: 'foo', id: 'bar')
   end
 
+  def translated_content
+    t('foo.bar')
+  end
 end
 
 class TestController < ApplicationController
