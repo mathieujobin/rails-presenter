@@ -1,0 +1,3 @@
+#!/bin/sh
+rspec -I support/test_app/spec support/test_app/spec/
+

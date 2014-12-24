@@ -1,11 +1,15 @@
 require "spec_helper"
 
 RSpec.describe TestController, :type => :controller do
+  render_views
   describe "GET #index" do
     it "responds successfully with an HTTP 200 status code" do
       get :index
+      expect(response).to have_http_status(200)
+      expect(response.class).to eq ActionController::TestResponse
       expect(response).to be_success
       expect(response.status).to eq 200
+      expect(response.body).to match 'something'
     end
 
     it "renders the index template" do
@@ -18,9 +22,16 @@ RSpec.describe TestController, :type => :controller do
         it 'should render the partial' do
           Object.should_receive(:render).with('partial/part')
           get :index
+          expect(response.body).to match /This is the partial part/
         end
       end
       context 'when using capture(&block).to_s' do
+        it 'should return the content of the captured content' do
+          get :index
+          expect(response.body).to match /captured content/
+        end
+      end
+      context 'when using yield' do
         it 'should return the content of the yielded content' do
           get :index
           expect(response.body).to match /yielded content/
@@ -29,7 +40,7 @@ RSpec.describe TestController, :type => :controller do
       context 'when using rails helper methods such as content_tag' do
         it 'should generate the tag properly' do
           get :index
-          expect(response.body).to match %r{div class='foo' id='bar'}
+          expect(response.body).to match %r{article class='foo' id='bar'}
         end
       end
       context 'when using rails asset helpers such as image_tag' do
