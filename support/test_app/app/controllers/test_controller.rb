@@ -1,4 +1,4 @@
-class FooBarPresenter
+class FooBarPresenter < RailsPresenter::Base
   def initialize
   end
 
@@ -6,12 +6,16 @@ class FooBarPresenter
     image_tag('image.png')
   end
 
-  def render_partial
-    render('partial/part', title: 'text')
+  def render_partial(view)
+    view.render('partial/part', title: 'text')
   end
 
   def capture_block(&block)
-    capture(&block).to_s
+    # ActionView::Template::Error:
+    # undefined method `output_buffer=' for #<FooBarPresenter:0x007ff06d1210c8>
+    #capture(&block).to_s
+
+    # but yield, works...
     yield
   end
 

@@ -2,10 +2,10 @@ require "spec_helper"
 
 RSpec.describe TestController, :type => :controller do
   render_views
+
   describe "GET #index" do
     it "responds successfully with an HTTP 200 status code" do
       get :index
-      expect(response).to have_http_status(200)
       expect(response.class).to eq ActionController::TestResponse
       expect(response).to be_success
       expect(response.status).to eq 200
@@ -20,9 +20,10 @@ RSpec.describe TestController, :type => :controller do
     context 'the controller uses the RailsPresenter gem' do
       context 'when using render for partials' do
         it 'should render the partial' do
-          Object.should_receive(:render).with('partial/part')
+          #TODO: check also .with('partial/part', title: 'text')
+          expect_any_instance_of(ActionView::Renderer).to receive(:render).at_least(:once)
           get :index
-          expect(response.body).to match /This is the partial part/
+          expect(response.body).to match %r{This is the partial part}
         end
       end
       context 'when using capture(&block).to_s' do
@@ -40,7 +41,7 @@ RSpec.describe TestController, :type => :controller do
       context 'when using rails helper methods such as content_tag' do
         it 'should generate the tag properly' do
           get :index
-          expect(response.body).to match %r{article class='foo' id='bar'}
+          expect(response.body).to match %r{article class=["']foo["'] id=["']bar["']}
         end
       end
       context 'when using rails asset helpers such as image_tag' do
