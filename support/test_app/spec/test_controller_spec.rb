@@ -19,9 +19,18 @@ RSpec.describe TestController, :type => :controller do
 
     context 'the controller uses the RailsPresenter gem' do
       context 'when using render for partials' do
-        it 'should render the partial' do
+        it 'should call render on the view object for the partial' do
           #TODO: check also .with('partial/part', title: 'text')
           expect_any_instance_of(ActionView::Renderer).to receive(:render).at_least(:once)
+          get :index
+        end
+        it 'should render the partial, along with the view and the layout' do
+          get :index
+          expect(response).to render_template("partial/_part")
+          expect(response).to render_template("test/index")
+          expect(response).to render_template("layouts/application")
+        end
+        it 'should return the content of the partial' do
           get :index
           expect(response.body).to match %r{This is the partial part}
         end
@@ -47,7 +56,7 @@ RSpec.describe TestController, :type => :controller do
       context 'when using rails asset helpers such as image_tag' do
         it 'should find the image within the app/assets sub directory' do
           get :index
-          expect(response.body).to match %r{img src='/assets/image.png'}
+          expect(response.body).to match '<img alt="Image" src="/assets/image.png" />'
         end
       end
     end

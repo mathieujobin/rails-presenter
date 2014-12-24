@@ -1,5 +1,6 @@
 class FooBarPresenter < RailsPresenter::Base
   def initialize
+    super
   end
 
   def display_image
