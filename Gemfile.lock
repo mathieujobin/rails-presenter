@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    rails-presenter (0.0.1)
+    rails-presenter (0.1.0)
 
 GEM
   remote: https://rubygems.org/
@@ -102,5 +102,5 @@ DEPENDENCIES
   rails (= 4.1.8)
   rails-presenter!
   rake (~> 10.0)
-  rspec-rails
-  sqlite3
+  rspec-rails (~> 2.99)
+  sqlite3 (~> 1.3)
