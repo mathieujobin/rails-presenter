@@ -26,15 +26,28 @@ And then execute:
 
 ```ruby
 class ExamplePresenter < RailsPresenter::Base
-  def to_html(&block)
 
-    out = ''
-    out << render('layouts/partial', title: 'text')
-    out << content_tag(:article, capture(&block).to_s, class: 'content-wrapper')
-    out << image_tag('test.png')
-
-    content_tag(:div, out.html_safe, class: options[:class], id: options[:id])
+  # This is important, you need to call super, for the asset pipeline to work.
+  def initialize
+    super
   end
+
+  def example_image_from_the_pipeline
+    image_tag('image.png')
+  end
+
+  def example_render_partial(view)
+    view.render('partial/part', title: 'text')
+  end
+
+  def example_yield_content
+    yield
+  end
+
+  def example_content_tag
+    content_tag(:article, 'foo'.html_safe, class: 'foo', id: 'bar')
+  end
+
 end
 ```
 
