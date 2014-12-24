@@ -1,4 +1,8 @@
 language: ruby
-script: ( cd support/test_app/ ; bundle install ; bundle exec rspec )
+script:
+  - cd support/test_app/
+  - bundle install
+  - pwd
+  - bundle exec rspec
 rvm:
   - 2.1.5
