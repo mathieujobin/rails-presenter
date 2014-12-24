@@ -1,6 +1,5 @@
 language: ruby
 script:
-  - rm Gemfile Gemfile.lock
   - cd support/test_app/
   - bundle install
   - pwd
