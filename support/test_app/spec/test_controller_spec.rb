@@ -13,11 +13,25 @@ RSpec.describe TestController, :type => :controller do
       expect(response).to render_template("index")
     end
 
-    #it "loads all of the posts into @posts" do
-    #  post1, post2 = Post.create!, Post.create!
-    #  get :index
-    #
-    #  expect(assigns(:posts)).to match_array([post1, post2])
-    #end
+    context 'the controller uses the RailsPresenter gem' do
+      context 'when using render for partials' do
+        it 'should render the partial' do
+          Object.should_receive(:render).with('partial/part')
+          get :index
+        end
+      end
+      context 'when using capture(&block).to_s' do
+        it 'should return the content of the yielded content' do
+        end
+      end
+      context 'when using rails helper methods such as content_tag' do
+        it 'should generate the tag properly' do
+        end
+      end
+      context 'when using rails asset helpers such as image_tag' do
+        it 'should find the image within the app/assets sub directory' do
+        end
+      end
+    end
   end
 end

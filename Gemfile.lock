@@ -1,0 +1,17 @@
+PATH
+  remote: .
+  specs:
+    rails-presenter (0.0.1)
+
+GEM
+  remote: https://rubygems.org/
+  specs:
+    rake (10.4.2)
+
+PLATFORMS
+  ruby
+
+DEPENDENCIES
+  bundler (~> 1.7)
+  rails-presenter!
+  rake (~> 10.0)
