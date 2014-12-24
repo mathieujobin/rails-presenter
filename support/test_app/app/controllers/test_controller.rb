@@ -14,10 +14,7 @@ class FooBarPresenter < RailsPresenter::Base
   def capture_block(&block)
     # ActionView::Template::Error:
     # undefined method `output_buffer=' for #<FooBarPresenter:0x007ff06d1210c8>
-    #capture(&block).to_s
-
-    # but yield, works...
-    yield
+    capture(&block).to_s
   end
 
   def yield_block

@@ -29,7 +29,7 @@ class ExamplePresenter < RailsPresenter::Base
 
   # This is important, you need to call super, for the asset pipeline to work.
   def initialize
-    super
+    super()
   end
 
   def example_image_from_the_pipeline

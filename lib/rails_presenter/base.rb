@@ -1,4 +1,5 @@
 class RailsPresenter::Base
+  include ActionView::Context
   include Sprockets::Rails::Helper
   def initialize
     self.debug_assets  = Rails.application.config.assets.debug
