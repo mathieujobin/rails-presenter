@@ -22,14 +22,20 @@ RSpec.describe TestController, :type => :controller do
       end
       context 'when using capture(&block).to_s' do
         it 'should return the content of the yielded content' do
+          get :index
+          expect(response.body).to match /yielded content/
         end
       end
       context 'when using rails helper methods such as content_tag' do
         it 'should generate the tag properly' do
+          get :index
+          expect(response.body).to match %r{div class='foo' id='bar'}
         end
       end
       context 'when using rails asset helpers such as image_tag' do
         it 'should find the image within the app/assets sub directory' do
+          get :index
+          expect(response.body).to match %r{img src='/assets/image.png'}
         end
       end
     end
