@@ -1,6 +1,8 @@
 class RailsPresenter::Base
   include ActionView::Context       # fix output_buffer to be able to capture yielded block
-  include Haml::Helpers             # add capture_haml support
+  if defined? Haml
+    include Haml::Helpers             # add capture_haml support
+  end
   include Sprockets::Rails::Helper  # add asset pipeline support
   def initialize
     self.debug_assets  = Rails.application.config.assets.debug
