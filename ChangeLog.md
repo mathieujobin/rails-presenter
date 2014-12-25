@@ -1,3 +1,6 @@
+# 0.1.3
+* Add Haml support
+
 # 0.1.2
 * Add support for I18n.t and capturing the output of a block
 * wrote this changelog
