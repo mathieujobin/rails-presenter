@@ -1,8 +1,17 @@
 RailsPresenter::Base
 ===============================================
 
-[![Build Status](https://travis-ci.org/somekool/rails-presenter.svg)](https://travis-ci.org/somekool/rails-presenter)
-[![Gem Version](https://badge.fury.io/rb/rails-presenter.svg)](http://badge.fury.io/rb/rails-presenter)
+  - [![Gem Version](https://badge.fury.io/rb/rails-presenter.svg)](http://badge.fury.io/rb/rails-presenter)
+  - [![Quality](http://img.shields.io/codeclimate/github/mathieujobin/rails-presenter.svg?style=flat-square)](https://codeclimate.com/github/mathieujobin/rails-presenter)
+  - [![Coverage](http://img.shields.io/codeclimate/coverage/github/mathieujobin/rails-presenter.svg?style=flat-square)](https://codeclimate.com/github/mathieujobin/rails-presenter)
+  - [![Build](http://img.shields.io/travis-ci/mathieujobin/rails-presenter.svg?style=flat-square)](https://travis-ci.org/mathieujobin/rails-presenter)
+  - [![Build Status](https://travis-ci.org/mathieujobin/rails-presenter.svg)](https://travis-ci.org/mathieujobin/rails-presenter)
+  - [![Dependencies](http://img.shields.io/gemnasium/mathieujobin/rails-presenter.svg?style=flat-square)](https://gemnasium.com/mathieujobin/rails-presenter)
+  - [![Downloads](http://img.shields.io/gem/dtv/rails-presenter.svg?style=flat-square)](https://rubygems.org/gems/rails-presenter)
+  - [![Tags](http://img.shields.io/github/tag/mathieujobin/rails-presenter.svg?style=flat-square)](http://github.com/mathieujobin/rails-presenter/tags)
+  - [![Releases](http://img.shields.io/github/release/mathieujobin/rails-presenter.svg?style=flat-square)](http://github.com/mathieujobin/rails-presenter/releases)
+  - [![Issues](http://img.shields.io/github/issues/mathieujobin/rails-presenter.svg?style=flat-square)](http://github.com/mathieujobin/rails-presenter/issues)
+  - [![Version](http://img.shields.io/gem/r/rails-presenter.svg?style=flat-square)](https://rubygems.org/gems/rails-presenter)
 
 it should ease the pain of creating a presenter that requires to access Rails helper methods
 
